@@ -10,13 +10,13 @@
   <body>
     <div class="loader" data-loader>
       <div class="loader-mark"></div>
-      <p>Initializing SafeFlow intelligence...</p>
+      <p>Initializing ECIN intelligence...</p>
     </div>
 
     <header class="site-header">
       <a class="brand" href="#home" aria-label="SafeFlow home">
-        <span class="brand-icon">SF</span>
-        <span>SafeFlow</span>
+        <!-- <span class="brand-icon">EC <br>IT</span> -->
+        <span>ECIN</span>
       </a>
       <button class="nav-toggle icon-button" type="button" aria-label="Open menu" data-nav-toggle hidden>
         <span></span><span></span><span></span>
@@ -79,7 +79,7 @@
         <div class="section-intro reveal">
           <span class="eyebrow">Smart Reporting</span>
           <h2 data-i18n="reportTitle">Turn a field observation into live intelligence.</h2>
-          <p>Reports are stored locally for this demo, queued offline when needed, and instantly reflected across the dashboard, map, and admin panel.</p>
+          <p>All Reports are stored, queued offline when user is offline needed, and instantly reflected across the dashboard and metrics once connected</p>
           <div class="alert-preview" data-alert-preview>
             <span></span>
             <p>Emergency alerts activate for repeated high-severity signals.</p>
@@ -114,6 +114,7 @@
                 <option>Enugu North</option>
                 <option>Awgu</option>
                 <option>Abakpa</option>
+                <option>Esut</option>
               </select>
             </label>
             <label>Photo evidence
@@ -215,28 +216,7 @@
         </div>
       </section>
 
-      <section class="section admin-auth" id="admin">
-        <div class="auth-panel reveal">
-          <span class="eyebrow">Access</span>
-          <h2>Citizen and admin sign-in simulation.</h2>
-          <form data-auth-form>
-            <label>Email<input type="email" name="email" placeholder="admin@safeflow.ng" required></label>
-            <label>Password<input type="password" name="password" placeholder="••••••••" required></label>
-            <button class="primary-button full" type="submit">Login / Register</button>
-          </form>
-          <p data-auth-status>Not signed in</p>
-        </div>
-        <div class="admin-panel reveal">
-          <div class="admin-head">
-            <div>
-              <span class="eyebrow">Admin Dashboard</span>
-              <h2>Moderate reports and update field status.</h2>
-            </div>
-            <button class="secondary-button compact" type="button" data-seed-report>Add demo alert</button>
-          </div>
-          <div class="admin-list" data-admin-list></div>
-        </div>
-      </section>
+      
 
       <section class="section partners">
         <div class="testimonial reveal">
