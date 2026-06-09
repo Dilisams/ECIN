@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4169E1">
+    <title>SafeFlow | Enugu Water & Sanitation Intelligence</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="loader" data-loader>
+      <div class="loader-mark"></div>
+      <p>Initializing SafeFlow intelligence...</p>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="SafeFlow home">
+        <span class="brand-icon">SF</span>
+        <span>SafeFlow</span>
+      </a>
+      <button class="nav-toggle icon-button" type="button" aria-label="Open menu" data-nav-toggle hidden>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#report" data-i18n="navReport">Report</a>
+        <a href="#dashboard" data-i18n="navDashboard">Dashboard</a>
+        <a href="#map" data-i18n="navMap">Live Map</a>
+        <a href="#finder" data-i18n="navFinder">Finder</a>
+        <a href="#admin" data-i18n="navAdmin">Admin</a>
+      </nav>
+      <div class="header-actions">
+        <button class="pill-button ghost" type="button" data-lang-toggle>Igbo</button>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>
+          <span class="sun"></span>
+          <span class="moon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Enugu Civic Intelligence Network</span>
+          <h1 data-i18n="heroTitle">Real-Time Water & Sanitation Intelligence for Enugu State</h1>
+          <p data-i18n="heroSubtitle">Track, report, and solve water and sanitation issues through community-powered data.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#report" data-ripple data-i18n="reportIssue">Report an Issue</a>
+            <a class="secondary-button" href="#dashboard" data-ripple data-i18n="exploreDashboard">Explore Live Dashboard</a>
+          </div>
+          <div class="trust-strip" aria-label="Platform capabilities">
+            <span>Offline reports</span>
+            <span>Heat intelligence</span>
+            <span>Community trust scoring</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="enugu-map" aria-label="Animated Enugu incident map">
+            <div class="map-grid"></div>
+            <div class="map-shape"></div>
+            <button class="map-pulse critical" style="--x: 67%; --y: 36%" aria-label="Critical issue in Nsukka"></button>
+            <button class="map-pulse moderate" style="--x: 48%; --y: 59%" aria-label="Moderate issue in Enugu North"></button>
+            <button class="map-pulse safe" style="--x: 35%; --y: 73%" aria-label="Safe zone in Awgu"></button>
+            <div class="radar-card">
+              <strong>Live Risk Scan</strong>
+              <span>23 new citizen signals analyzed</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics section">
+        <div class="metric reveal"><span data-counter="1284">0</span><p>Total reports</p></div>
+        <div class="metric reveal"><span data-counter="312">0</span><p>Active cases</p></div>
+        <div class="metric reveal"><span data-counter="876">0</span><p>Resolved issues</p></div>
+        <div class="metric reveal"><span data-counter="27">0</span><p>High-risk zones</p></div>
+      </section>
+
+      <section class="section split" id="report">
+        <div class="section-intro reveal">
+          <span class="eyebrow">Smart Reporting</span>
+          <h2 data-i18n="reportTitle">Turn a field observation into live intelligence.</h2>
+          <p>Reports are stored locally for this demo, queued offline when needed, and instantly reflected across the dashboard, map, and admin panel.</p>
+          <div class="alert-preview" data-alert-preview>
+            <span></span>
+            <p>Emergency alerts activate for repeated high-severity signals.</p>
+          </div>
+        </div>
+
+        <form class="report-form reveal" data-report-form>
+          <div class="form-grid">
+            <label>Issue type
+              <select name="type" required>
+                <option>Broken borehole</option>
+                <option>No water supply</option>
+                <option>Dirty water</option>
+                <option>Flooding</option>
+                <option>Blocked drainage</option>
+                <option>Open defecation</option>
+                <option>Waste contamination</option>
+              </select>
+            </label>
+            <label>Severity
+              <select name="severity" required>
+                <option>Moderate</option>
+                <option>Critical</option>
+                <option>Safe</option>
+              </select>
+            </label>
+            <label>Community / LGA
+              <select name="area" required>
+                <option>Uwani</option>
+                <option>Nsukka</option>
+                <option>Oji River</option>
+                <option>Enugu North</option>
+                <option>Awgu</option>
+                <option>Abakpa</option>
+              </select>
+            </label>
+            <label>Photo evidence
+              <input type="file" name="photo" accept="image/*">
+            </label>
+          </div>
+          <label>Description
+            <textarea name="description" rows="4" placeholder="Describe what happened, the exact location, and who is affected." required></textarea>
+          </label>
+          <div class="location-row">
+            <button class="secondary-button compact" type="button" data-gps>Use GPS Location</button>
+            <span data-gps-status>Manual area selected</span>
+          </div>
+          <button class="primary-button full" type="submit" data-ripple>Submit report</button>
+        </form>
+      </section>
+
+      <section class="section dashboard" id="dashboard">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Live Dashboard</span>
+          <h2>Operational water and sanitation analytics.</h2>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel kpi-panel reveal">
+            <h3>Command Metrics</h3>
+            <div class="mini-kpis">
+              <div><strong data-live-total>0</strong><span>Total</span></div>
+              <div><strong data-live-active>0</strong><span>Active</span></div>
+              <div><strong data-live-resolved>0</strong><span>Resolved</span></div>
+              <div><strong data-live-risk>0</strong><span>Risk zones</span></div>
+            </div>
+          </article>
+          <article class="panel chart-panel reveal">
+            <h3>Water Scarcity Trend</h3>
+            <canvas id="trendChart" width="680" height="280"></canvas>
+          </article>
+          <article class="panel chart-panel reveal">
+            <h3>Most Reported Issues</h3>
+            <canvas id="issueChart" width="680" height="280"></canvas>
+          </article>
+          <article class="panel intelligence-panel reveal">
+            <h3>Area Intelligence</h3>
+            <ul data-intelligence-list></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section map-section" id="map">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Live Map</span>
+          <h2>Incident heat, clusters, and field status.</h2>
+        </div>
+        <div class="map-toolbar reveal">
+          <input type="search" placeholder="Search community" data-map-search>
+          <select data-map-filter>
+            <option value="all">All issues</option>
+            <option>Broken borehole</option>
+            <option>No water supply</option>
+            <option>Dirty water</option>
+            <option>Flooding</option>
+            <option>Blocked drainage</option>
+          </select>
+        </div>
+        <div class="live-map reveal" data-live-map>
+          <div class="heat heat-a"></div>
+          <div class="heat heat-b"></div>
+          <div class="heat heat-c"></div>
+          <div class="map-label">Enugu State Field Layer</div>
+          <div class="marker-detail" data-marker-detail>Select a live marker to inspect report details.</div>
+        </div>
+      </section>
+
+      <section class="section finder" id="finder">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Water Access Finder</span>
+          <h2>Find nearby verified water and sanitation points.</h2>
+        </div>
+        <div class="finder-controls reveal">
+          <input type="search" placeholder="Search by community or facility" data-finder-search>
+          <div class="segmented" data-finder-filter>
+            <button type="button" class="active" data-filter="all">All</button>
+            <button type="button" data-filter="borehole">Boreholes</button>
+            <button type="button" data-filter="tap">Taps</button>
+            <button type="button" data-filter="toilet">Toilets</button>
+          </div>
+        </div>
+        <div class="facility-grid" data-facilities></div>
+      </section>
+
+      <section class="section ai-section" id="ai">
+        <div class="section-heading reveal">
+          <span class="eyebrow">AI Intelligence</span>
+          <h2>Rule-based predictions for demo-ready crisis response.</h2>
+        </div>
+        <div class="ai-grid">
+          <article class="ai-card reveal"><span>Prediction</span><h3>Uwani may experience water shortage within 72 hours.</h3><p>Repeated no-supply reports and low facility verification scores are trending together.</p></article>
+          <article class="ai-card reveal"><span>Flood Risk</span><h3>Drainage alerts are increasing around Abakpa.</h3><p>Blocked drainage reports crossed the emergency threshold this week.</p></article>
+          <article class="ai-card reveal"><span>Trust Signal</span><h3>9 citizen reporters reached verified status.</h3><p>Community trust scores improve prioritization and spam resistance.</p></article>
+        </div>
+      </section>
+
+      <section class="section admin-auth" id="admin">
+        <div class="auth-panel reveal">
+          <span class="eyebrow">Access</span>
+          <h2>Citizen and admin sign-in simulation.</h2>
+          <form data-auth-form>
+            <label>Email<input type="email" name="email" placeholder="admin@safeflow.ng" required></label>
+            <label>Password<input type="password" name="password" placeholder="••••••••" required></label>
+            <button class="primary-button full" type="submit">Login / Register</button>
+          </form>
+          <p data-auth-status>Not signed in</p>
+        </div>
+        <div class="admin-panel reveal">
+          <div class="admin-head">
+            <div>
+              <span class="eyebrow">Admin Dashboard</span>
+              <h2>Moderate reports and update field status.</h2>
+            </div>
+            <button class="secondary-button compact" type="button" data-seed-report>Add demo alert</button>
+          </div>
+          <div class="admin-list" data-admin-list></div>
+        </div>
+      </section>
+
+      <section class="section partners">
+        <div class="testimonial reveal">
+          <p>“SafeFlow gives field teams a shared operating picture for water, sanitation, and flood response.”</p>
+          <strong>Enugu WASH Response Team</strong>
+        </div>
+        <div class="partner-row reveal" aria-label="Partners">
+          <span>State WASH Desk</span>
+          <span>Community Monitors</span>
+          <span>NGO Response Hub</span>
+          <span>Local Authorities</span>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast-region" data-toasts aria-live="polite"></div>
+    <dialog class="success-modal" data-success-modal>
+      <button class="icon-button modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <div class="success-ring"></div>
+      <h2>Report submitted</h2>
+      <p>Your signal has been added to SafeFlow intelligence and routed for review.</p>
+      <button class="primary-button" type="button" data-close-modal>Continue</button>
+    </dialog>
+
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
